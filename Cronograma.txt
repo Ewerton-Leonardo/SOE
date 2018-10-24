@@ -1,0 +1,13 @@
+CRONOGRAMA
+
+ENTREGA DO PROJETO COMPLETO-> 17/10/2018
+
+
+03/10/2018
+o que fazer:
+    implementar todas as classes DAO
+    prazo: 03/10/2018
+
+    Implementar métodos "cadastrar aluno"; "cadastrar professor" "login" e "inserir nova atividade"
+    prazo: 08/10/2018
+

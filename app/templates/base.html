@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>SOE - Sistema de Organização Estudantil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" style="background-color: dodgerblue">
+    <h2>Sistema de Organização Estudantil</h2>
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+                <a class="nav-link " href="{{ url_for('index') }}">Início</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('cadastro_aluno') }}">Cadastrar-se como aluno</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('cadastro_professor') }}">Cadastrar-se como professor</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<div class="alert alert-warning">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+</div>
+{% block content %}
+{% endblock %}
+<!--<script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+</body>
+</html>

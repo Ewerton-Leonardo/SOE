@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="post" class="form-text">
+        <div class="col-md-6 offset-md-4">
+            <div class="form-group">
+                    {{ form_login.username.label }}<br>
+                    {{ form_login.username(_class="form-control", placeholder="Seu nome de usuário") }}
+            </div>
+            <div class="form-group">
+                    {{ form_login.senha.label }}<br>
+                    {{ form_login.senha(_class="form-control", placeholder="Sua senha") }}
+            </div>
+            <div class="form-group">
+                    {{ form_login.entrar(_class="btn btn-primary", title=form_login.entrar.label) }}
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+<h2>Testando</h2>
