@@ -1,0 +1,6 @@
+{% extends 'base_pg_inicial.html' %}
+{% block content %}
+    <a href="{{ url_for('atividades') }}"><button class="btn btn-outline-primary btn-lg">Atividades</button> </a>
+    <a href="{{ url_for('disciplinas') }}"><button class="btn btn-outline-primary btn-lg">Disciplinas</button> </a>
+    <a href="{{ url_for('horarios') }}"><button class="btn btn-outline-primary btn-lg">Horários</button> </a>
+{% endblock %}

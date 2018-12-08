@@ -1,0 +1,15 @@
+{% extends 'base_pg_inicial.html' %}
+{% block content %}
+    <div class="jumbotron container">
+        <form action="" method="post" class="form-text">
+            {% from 'macro.html' import render_field_input %}
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ render_field_input(form.nome) }}
+            </div>
+            <div class="form-group">
+                {{ form.enviar(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+{% endblock %}

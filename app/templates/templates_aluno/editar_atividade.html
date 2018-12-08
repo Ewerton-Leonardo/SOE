@@ -1,0 +1,30 @@
+{% extends 'base_pg_inicial.html' %}
+{% block content %}
+    <div class="jumbotron container">
+        <form action="" method="post" class="form-text">
+            {% from 'macro.html' import render_field_input, render_radiobox %}
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ render_field_input(form.nome) }}
+            </div>
+            <div class="form-group">
+                {{ render_field_input(form.prazo_entrega) }}
+            </div>
+            <div class="form-group">
+                {{ render_field_input(form.tag) }}
+            </div>
+            <div class="form-group">
+                {{ render_field_input(form.disciplina) }}
+            </div>
+            <div class="form-group">
+                {{ render_field_input(form.conteudo) }}
+            </div>
+            <div class="form-group">
+                {{ render_radiobox(form.nivel_importancia) }}
+            </div>
+            <div class="form-group">
+                {{ form.enviar(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+{% endblock %}

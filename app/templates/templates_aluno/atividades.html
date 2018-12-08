@@ -1,0 +1,29 @@
+{% extends 'base_pg_inicial.html' %}
+{% block content %}
+    <a href="{{ url_for('adicionar_atividade') }}"><button class="btn btn-outline-success btn-lg btn-block">Adicionar atividade</button></a>
+    {% if list_atividades != None %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                    <td>Prazo de entrega</td>
+                    <td>Disciplina</td>
+                    <td>Nível de<br>importância</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for atividade in list_atividades %}
+                    <tr>
+                        <td>{{ atividade.nome }}</td>
+                        <td>{{ atividade.prazo_entrega }}</td>
+                        <td>{{ atividade.disciplina }}</td>
+                        <td>{{ atividade.nivel_importancia }}</td>
+                        <td><a href="{{ url_for('visualizar_atividade', id_atividade=atividade.id) }}"><button class="btn btn-light"><img src="{{ url_for('static', filename='png/eye-3x.png') }}"></button></a></td>
+                        <td><a href="{{ url_for('editar_atividade', id_atividade=atividade.id) }}"><button class="btn btn-light"><img src="{{ url_for('static', filename='png/pencil-3x.png') }}"></button></a></td>
+                        <td><a href="{{ url_for('apagar_atividade', id_atividade=atividade.id) }}"><button class="btn btn-danger"><img src="{{ url_for('static', filename='png/trash-3x.png') }}"></button></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

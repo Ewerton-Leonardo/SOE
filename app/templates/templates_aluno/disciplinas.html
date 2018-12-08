@@ -1,0 +1,22 @@
+{% extends 'base_pg_inicial.html' %}
+{% block content %}
+    <a href="{{ url_for('adicionar_disciplina') }}"><button class="btn btn-outline-success btn-lg btn-block">Adicionar disciplina</button></a>
+    {% if list_disciplinas != None %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Nome</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for disciplina in list_disciplinas %}
+                    <tr>
+                        <td>{{ disciplina.nome }}</td>
+                        <td><a href="{{ url_for('editar_disciplina', id_disciplina=disciplina.id) }}"><button class="btn btn-light"><img src="{{ url_for('static', filename='png/pencil-3x.png') }}"></button></a></td>
+                        <td><a href="{{ url_for('apagar_disciplina', id_disciplina=disciplina.id) }}"><button class="btn btn-danger"><img src="{{ url_for('static', filename='png/trash-3x.png') }}"></button></a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}

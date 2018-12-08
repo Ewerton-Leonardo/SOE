@@ -5,6 +5,7 @@
     <title>SOE - Sistema de Organização Estudantil</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body>
 <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar" style="background-color: dodgerblue">
@@ -12,21 +13,28 @@
     <div class="navbar-nav-scroll">
         <ul class="navbar-nav bd-navbar-nav flex-row">
             <li class="nav-item">
-                <a class="nav-link " href="{{ url_for('index') }}">Início</a>
+                <a class="nav-link " href="{{ url_for('pagina_inicial') }}">Página Inicial</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                <a class="nav-link" href="{{ url_for('atividades') }}">Atividades</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('cadastro_aluno') }}">Cadastrar-se</a>
+                <a class="nav-link" href="{{ url_for('disciplinas') }}">Disciplinas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('horarios') }}">Horários</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('logout') }}">Sair</a>
             </li>
         </ul>
     </div>
 </header>
+
     {% with messages = get_flashed_messages(category_filter=['invalido']) %}
       {% if messages %}
       <div class="alert alert-warning alert-dismissible">
-        <ul class=flashes>
+        <ul class="flashes list-unstyled">
         {% for message in messages %}
             <button type="button" class="close" data-dismiss="alert">
                 <span class="glyphicon glyphicon-remove">&times;</span>
@@ -41,7 +49,7 @@
     {% with messages = get_flashed_messages(category_filter=['erro']) %}
       {% if messages %}
       <div class="alert alert-danger alert-dismissible">
-        <ul class=flashes>
+        <ul class="flashes list-unstyled">
         {% for message in messages %}
             <button type="button" class="close" data-dismiss="alert">
                 <span class="glyphicon glyphicon-remove">&times;</span>
@@ -56,7 +64,7 @@
     {% with messages = get_flashed_messages(category_filter=['sucesso']) %}
       {% if messages %}
       <div class="alert alert-success alert-dismissible">
-        <ul class=flashes>
+        <ul class="flashes list-unstyled">
         {% for message in messages %}
             <button type="button" class="close" data-dismiss="alert">
                 <span class="glyphicon glyphicon-remove">&times;</span>
@@ -68,6 +76,7 @@
         </div>
       {% endif %}
     {% endwith %}
+
 {% block content %}
 {% endblock %}
 <!--<script src="http://code.jquery.com/jquery-1.9.1.js"></script>-->

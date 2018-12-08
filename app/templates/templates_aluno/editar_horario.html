@@ -1,0 +1,27 @@
+{% extends 'base_pg_inicial.html' %}
+{% block content %}
+    <div class="jumbotron container">
+        <form action="" method="post" class="form-text">
+            {% from 'macro.html' import render_field_input %}
+            {{ form.csrf_token }}
+            <div class="form-group">
+                {{ render_field_input(form.disciplina) }}
+            </div>
+            <div class="form-group">
+                {{ render_field_input(form.professor) }}
+            </div>
+            <div class="form-group">
+                {{ render_field_input(form.dia) }}
+            </div>
+            <div class="form-group">
+                {{ render_field_input(form.hora) }}
+            </div>
+            <div class="form-group">
+                {{ render_field_input(form.sala) }}
+            </div>
+            <div class="form-group">
+                {{ form.enviar(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+{% endblock %}

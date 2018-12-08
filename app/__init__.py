@@ -16,5 +16,5 @@ manager.add_command('db', MigrateCommand)
 
 lm = LoginManager(app)
 
-from app.models import tables, forms
+from app.models import aluno, atividade, horario, disciplina, forms
 from app.controllers import default

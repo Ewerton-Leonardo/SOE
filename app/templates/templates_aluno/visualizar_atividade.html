@@ -1,0 +1,9 @@
+{% extends 'base_pg_inicial.html' %}
+{% block content %}
+    <h2>{{ atividade.nome }}</h2><br><br>
+    <span>Prazo de entrega final: {{ atividade.prazo_entrega }}</span><br>
+    <b>IMPORTÂNCIA: {{ atividade.nivel_importancia }}</b><br>
+    <small>{{ atividade.tag }}</small><br>
+    <b>{{ atividade.nome_disciplina }}</b><br><br>
+    <p>{{ atividade.conteudo }}</p>
+{% endblock %}

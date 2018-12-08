@@ -1,0 +1,12 @@
+{% macro render_field_input(field) %}
+    {{ field.label }}
+    {{ field(class="form-control", placeholder=field.placeholder) }}
+{% endmacro %}
+{% macro render_radiobox(field) %}
+    {{ field.label }}<br>
+    <ul class="list-unstyled list-inline">
+    {% for item in field %}
+        <li class="list-inline-item">{{ item }} {{ item.label }}</li>
+    {% endfor %}
+    </ul>
+{% endmacro %}
